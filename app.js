@@ -10,11 +10,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var assert = require('assert');
-
-var myPythonScriptPath = 'C:/Users/visha/Desktop/Nutanix Hackathon/hack/hello.py';
-
-// Use python shell
-let {PythonShell} = require("python-shell");
+// var PythonShell = require('python-shell');
 
 var ejs = require('ejs'); // important view engine 
 
@@ -46,27 +42,34 @@ app.get('/',function(req,res,next){
 
 app.get('/Log-Analyser', function(req,res,next){
 	res.render('Log');
-	console.log("abe kuch ho raha hai kya");
-	
-	// PythonShell.on('message', function (message) {
-	//     // received a message sent from the Python script (a simple "print" statement)
-	//     console.log(message);
-	// });
+});
 
-	// // end the input stream and allow the process to exit
-	// pyshell.end(function (err) {
-	//     if (err){
-	//         throw err;
-	//     };
-	//     console.log('finished');
-	// });
-	var options = {
-    mode: 'text',
-    args: ['DBG\n']
-	};
-	PythonShell.run("public/python/logsearch.py", options, function(err,results) {
-	  if (err) throw err;
-	  console.log("%j",results);
-	  console.log("finished");
-});
-});
+app.get('/name', callName); 
+
+function callName(req, res) { 
+    
+    // Use child_process.spawn method from 
+    // child_process module and assign it 
+    // to variable spawn 
+    var spawn = require("child_process").spawn; 
+    
+    // Parameters passed in spawn - 
+    // 1. type_of_script 
+    // 2. list containing Path of the script 
+    // and arguments for the script 
+    
+    // E.g : http://localhost:3000/name?firstname=Mike&lastname=Will 
+    // so, first name = Mike and last name = Will 
+    var process = spawn('python',["public/python/logsearch.py", 
+                            req.query.firstname, 
+                            req.query.lastname] ); 
+
+    // Takes stdout data from script which executed 
+    // with arguments and send this data to res object 
+    process.stdout.on('data', function(data) { 
+        res.render('index');
+        console.log(data.toString());
+    } ) 
+} 
+
+// save code as start.js 

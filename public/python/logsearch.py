@@ -2,7 +2,7 @@ from multiprocessing import Pool
 import os
 
 filedic=[]
-keep_phrases = input("Enter String :")
+keep_phrases = input("Enter string:")
 keep_phrases = keep_phrases.split(";")
 
 def logger(infile) :
@@ -13,7 +13,7 @@ def logger(infile) :
             if phrase in line:
                 print (line[:-1])
                 break
-for subdir, dirs, files in os.walk("C:/Users/visha/Desktop/Nutanix Hackathon/hack/public/data/log_simulator"):
+for subdir, dirs, files in os.walk("C:/Users/visha/Desktop/Nutanix Hackathon/hack3/public/data/log_simulator"):
     for file in files:
         #print os.path.join(subdir, file)
         filepath = subdir + os.sep + file
