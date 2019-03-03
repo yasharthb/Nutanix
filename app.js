@@ -10,6 +10,8 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var assert = require('assert');
+var fs = require('fs');
+Tail = require('tail').Tail;
 
 let {PythonShell} = require("python-shell");
 
@@ -20,7 +22,7 @@ var ejs = require('ejs'); // important view engine
 
 // Init App
 var app = express();
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 5050));
 
 var server=app.listen(app.get('port'), function(){
   console.log('Server started on port '+app.get('port'));
@@ -45,7 +47,7 @@ app.get('/',function(req,res,next){
 });
 
 app.get('/llogs', function(req,res,next){
-    res.render('llogs');
+    res.render('llogs', {search_results3 : []})
 });
 
 app.get('/lsearch', function(req,res,next){
@@ -65,35 +67,58 @@ app.get('/Log-Analyser', function(req,res,next){
 app.post('/lsearch', function(req,res,next){
     // Query
     var item = req.body.label;
-
-    // Function to call the Logs for the relateable search
-    //...........
-
-    // rendering the page with the data crunched in a list format like ["gshgjs","hskgdjs"]....list ka naam search_results
-    search_results1 = ['2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data']
-    res.render('lsearch', {search_results1 : search_results1});
+    var arg1 = item.split(";");
+    var options = {
+    mode: 'text',
+    args: arg1
+    };
+    PythonShell.run("public/python/logsch.py", options, function(err,results) {
+      if (err) throw err;
+      res.render('lsearch', {search_results1 : results});
+      console.log("finished");
+});
+    
 });
 
 app.post('/tstamp', function(req,res,next){
     // Query
-    var item = req.body.label;
+    var item1 = req.body.datetime1;
+    var item2 = req.body.datetime2;
 
-    // Function to call the Logs for the relateable search
-    //...........
+    console.log(item1 + "-" + item2);
 
-    // rendering the page with the data crunched in a list format like ["gshgjs","hskgdjs"]....list ka naam search_results
-    search_results2 = ['2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
-    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data']
-    res.render('tstamps', {search_results2 : search_results2});
+    var query = item1 + ";" + item2;
+    if (query ==';')
+     {res.render('tstamps', {search_results2 : []});
+      return;}
+
+    var options = {
+    mode: 'text',
+    args: [query]
+    };
+    PythonShell.run("public/python/logbtw.py", options, function(err,results) {
+      if (err) throw err;
+
+      res.render('tstamps', {search_results2 : results});
+      console.log("finished");
 });
+});
+
+let temp = [];
+
+app.post('/llogs', function(req,res,next){
+
+    PythonShell.run("public/python/logstream.py", null, function(err,results) {
+      if (err) throw err;
+      console.log("finished");
+    });
+
+    var options= {separator: /[\r]{0,1}\n/, fromBeginning: false, fsWatchOptions: {}, follow: true, logger: console}
+    tail = new Tail("public/data/myfile.txt", options);
+    tail.on("line", function(data) {
+      temp.push(data);
+      console.log(temp);
+    });
+});
+
+// ek function likh jisme app.post ho as recursive fir usse call kar app.post ko wapas jisse ek loop ban jaega app.post and tail ka

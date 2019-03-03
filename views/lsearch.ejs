@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" type="image/jpg" href="Images/logo.jpg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -25,7 +26,7 @@
 
 <div class="topnav" id="myTopnav">
   <a href="/">
-    <img src="./../images/logo.jpg" style="width: 35px;margin-left: 10px;">
+    <img src="/Images/logo.jpg" style="width: 35px;margin-left: 10px;">
   </a>
   <div id="imp">
   <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#video" style="background-color: #82E0AA;">
@@ -52,30 +53,28 @@
       <table class="head" style="width: 98.2%;background-color: transparent;">
           <thead>
             <tr>
-                <td style="width: 20%;text-align: center;">S.No.</td>
+                <td style="width: 20.1%;text-align: center;background-color: #D5DBDB;color: black;">S.No.</td>
                 <!--<td>Time-Stamp</td>-->
-                <td style="text-align: center;">Logs</td>
+                <td style="text-align: center;background-color: #E5E7E9;color: black;">Logs</td>
             </tr>
           </thead>
         </table>
+      </b>
       <div id="views">
       <% if(search_results1){ %>
       <% for (var i = 0; i < search_results1.length; i++) { %>
         <table class="inner_table" style="width: 100%;">
         <tbody>
           <tr>
-            <td style="color: white;text-align: center;width: 20%;"><%= i + 1 %></td>
-            <td style="color: white;text-align: center;"><%= search_results1[i] %></td>
+            <td style="color: black;text-align: center;width: 20%;background-color: #E5E7E9;"><%= i + 1 %></td>
+            <td style="color: black;text-align: center;background-color: #F2F3F4;"><%= search_results1[i] %></td>
           </tr>
-        </b>
         </tbody>
         </table>
       <% } %>
       <% } %>
     </div>
     </div>
-  </div>
-</div>
 
 <footer id="footer">
    <div class="footer-bottom text-center">
@@ -135,6 +134,7 @@ function closeNav() {
 
 <!-- Video Visualization -->
 
+
 <div id="video" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -144,5 +144,3 @@ function closeNav() {
         </center>
       </div>
     </div>
-  </div>
-</div>

@@ -1,18 +1,24 @@
 from multiprocessing import Pool
 import os
-import sys
+
 filedic=[]
-important=[]
-keep_phrases = sys.argv[1]
-keep_phrases = keep_phrases.split(";")
+keep_phrases =['DBG','ERROR','INFO']
+cdbg=0
+cerr=0
+cinfo=0
 def logger(infile) :
     with open(infile) as f:
-        f = f.readlines()
+		f = f.readlines()
     for line in f:
-        for phrase in keep_phrases:
-            if phrase in line:
-                print (line[:-1])
-                break
+        if keep_phrases[0] in line:
+            cdbg=cdbg+1
+        elif keep_phrases[1] in line:
+            cerr=cerr+1
+        elif keep_phrases[2] in line:
+            cinfo=cinfo+1
+print (cdbg)
+print(cerr)
+print(cinfo)
 for subdir, dirs, files in os.walk("/home/yasharth/Download_Temp/log_simulator/"):
     for file in files:
         #print os.path.join(subdir, file)
@@ -20,5 +26,6 @@ for subdir, dirs, files in os.walk("/home/yasharth/Download_Temp/log_simulator/"
 
         if filepath.endswith(".log"):
         	filedic.append(filepath)
+
 p=Pool(len(filedic))
 p.map(logger,filedic)

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" type="image/jpg" href="Images/logo.jpg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -8,7 +9,10 @@
 <link rel="stylesheet" type="text/css" href="./../style/new.css">
 <link rel="stylesheet" type="text/css" href="../style/main.css">
 <link rel="stylesheet" type="text/css" href="../style/table.css">
+<link rel="stylesheet" type="text/css" href="../js/pdfgen.js">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 </head>
 
 <body>
@@ -21,7 +25,7 @@
 
 <div class="topnav" id="myTopnav">
   <a href="/">
-    <img src="./../images/logo.jpg" style="width: 35px;margin-left: 10px;">
+    <img src="/Images/logo.jpg" style="width: 35px;margin-left: 10px;">
   </a>
   <div id="imp">
   <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#video" style="background-color: #82E0AA;">
@@ -44,51 +48,60 @@
                 From:
               </td>
               <td>
-                <input type="datetime-local" name="datetime1" style="color: black;border:none;border-radius: 0 10px 0 10px;font-size: 20px;">
+                <input type="text" placeholder="2019-03-03 15:56:20.697045" name="datetime1" style="color: black;border:none;border-radius: 0 10px 0 10px;font-size: 20px;padding: 5px;">
               </td>
               <td style="text-align: center;font-size: 20px;">
                 To:
               </td>
               <td>
-                <input type="datetime-local" name="datetime2" style="color: black;border:none;border-radius: 0 10px 0 10px;font-size: 20px;">
+                <input type="text" placeholder="2019-03-03 15:56:27.180213" name="datetime2" style="color: black;border:none;border-radius: 0 10px 0 10px;font-size: 20px;padding: 5px;">
               </td>
               <td>
-                <button type="submit" style="background-color: #58D68D;color: white;border:none;border-radius: 10px;font-size: 20px;padding-left: 10px;padding-right: 10px;padding-top: 5px;padding-bottom: 5px;"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="submit" style="background-color: #58D68D;color: white;border:none;border-radius: 10px;font-size: 20px;padding-left: 10px;padding-right: 10px;padding-top: 5px;padding-bottom: 5px;float: left;"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+                <button class="btn" id="export" style="background-color: #E74C3C;color: white;border:none;border-radius: 10px;font-size: 20px;padding-left: 10px;padding-right: 10px;padding-top: 5px;padding-bottom: 5px;float: right;"><i class="fa fa-download" aria-hidden="true"></i></button>
               </td>
             </tr>
           </table>
-        </form>
       </center>
     </div>
-    <div class="col-md-12" style="margin-top: 10px;">
+    <div class="col-md-12" style="margin-top: 10px;" >
       <b>
       <table class="head" style="width: 98.2%;background-color: transparent;">
           <thead>
             <tr>
-                <td style="width: 20%;text-align: center;">S.No.</td>
+                <td style="width: 20.1%;text-align: center;background-color: #D5DBDB;color: black;">S.No.</td>
                 <!--<td>Time-Stamp</td>-->
-                <td style="text-align: center;">Logs</td>
+                <td style="text-align: center;background-color: #E5E7E9;color: black;">Logs</td>
             </tr>
           </thead>
         </table>
+      </b>
       <div id="views">
       <% if(search_results2){ %>
       <% for (var i = 0; i < search_results2.length; i++) { %>
-        <table class="inner_table" style="width: 100%;">
+        <table class="inner_table" style="width: 100%;" id="content">
         <tbody>
           <tr>
-            <td style="color: white;text-align: center;width: 20%;"><%= i + 1 %></td>
-            <td style="color: white;text-align: center;"><%= search_results2[i] %></td>
+            <td style="color: black;text-align: center;width: 20%;background-color: #E5E7E9;"><%= i + 1 %></td>
+            <td style="color: black;text-align: center;background-color: #F2F3F4;"><%= search_results2[i] %></td>
           </tr>
-        </b>
         </tbody>
         </table>
       <% } %>
       <% } %>
     </div>
     </div>
-  </div>
-</div>
+
+    <div id="views1" style="display: none;">
+      <% if(search_results2){ %>
+      <% for (var i = 0; i < search_results2.length; i++) { %>
+            <p><%= search_results2[i] %></p>
+      <% } %>
+      <% } %>
+    </div>
+
+
 
 <footer id="footer">
    <div class="footer-bottom text-center">
@@ -117,6 +130,48 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "#5DADE2";
+}
+document.getElementById('export').addEventListener('click',
+  exportPDF);
+
+var specialElementHandlers = {
+  // element with id of "bypass" - jQuery style selector
+  '.no-export': function(element, renderer) {
+    // true = "handled elsewhere, bypass text extraction"
+    return true;
+  }
+};
+
+function exportPDF() {
+
+  var doc = new jsPDF('p', 'pt', 'a4');
+  //A4 - 595x842 pts
+  //https://www.gnu.org/software/gv/manual/html_node/Paper-Keywords-and-paper-size-in-points.html
+
+
+  //Html source 
+  var source = document.getElementById('views1').innerHTML;
+
+  var margins = {
+    top: 0,
+    bottom: 0,
+    left: 10,
+    width: 595
+  };
+
+  doc.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left,
+    margins.top, {
+      'width': margins.width,
+      // 'elementHandlers': specialElementHandlers
+    },
+
+    function(dispose) {
+      // dispose: object with X, Y of the last line add to the PDF 
+      //          this allow the insertion of new lines after html
+      doc.save('Test.pdf');
+    }, margins);
 }
 </script>
      

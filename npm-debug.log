@@ -1,0 +1,30 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/n/versions/node/11.10.1/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '--no-options',
+1 verbose cli   'tail' ]
+2 info using npm@3.5.2
+3 info using node@v11.10.1
+4 verbose stack Error: Cannot find module 'ansi'
+4 verbose stack     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:613:15)
+4 verbose stack     at Function.Module._load (internal/modules/cjs/loader.js:539:25)
+4 verbose stack     at Module.require (internal/modules/cjs/loader.js:667:17)
+4 verbose stack     at require (internal/modules/cjs/helpers.js:20:18)
+4 verbose stack     at Object.<anonymous> (/usr/share/npm/lib/ls.js:15:13)
+4 verbose stack     at Module._compile (internal/modules/cjs/loader.js:738:30)
+4 verbose stack     at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
+4 verbose stack     at Module.load (internal/modules/cjs/loader.js:630:32)
+4 verbose stack     at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
+4 verbose stack     at Function.Module._load (internal/modules/cjs/loader.js:562:3)
+5 verbose cwd /home/yashb/Downloads/LogAnalyzer/Nutanix
+6 error Linux 4.20.0-042000-generic
+7 error argv "/usr/local/n/versions/node/11.10.1/bin/node" "/usr/bin/npm" "install" "--save" "--no-options" "tail"
+8 error node v11.10.1
+9 error npm  v3.5.2
+10 error code MODULE_NOT_FOUND
+11 error Cannot find module 'ansi'
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]

@@ -1,18 +1,21 @@
 from multiprocessing import Pool
 import os
 import sys
+import time
 filedic=[]
-important=[]
-keep_phrases = sys.argv[1]
-keep_phrases = keep_phrases.split(";")
+# keep_phrases = sys.argv[1]
+# keep_phrases = keep_phrases.split(";")
+
 def logger(infile) :
-    with open(infile) as f:
-        f = f.readlines()
-    for line in f:
-        for phrase in keep_phrases:
-            if phrase in line:
-                print (line[:-1])
-                break
+    f=open(infile)
+    while 1:
+        where = f.tell()
+        line = f.readline()
+        if not line:
+            time.sleep(0.01)
+            f.seek(where)
+        else:
+            print (line[:-1],file=open("public/data/myfile.txt", "a"))
 for subdir, dirs, files in os.walk("/home/yasharth/Download_Temp/log_simulator/"):
     for file in files:
         #print os.path.join(subdir, file)
@@ -20,5 +23,6 @@ for subdir, dirs, files in os.walk("/home/yasharth/Download_Temp/log_simulator/"
 
         if filepath.endswith(".log"):
         	filedic.append(filepath)
+
 p=Pool(len(filedic))
 p.map(logger,filedic)
