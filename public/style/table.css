@@ -1,0 +1,25 @@
+table{
+    background-color: transparent;
+}
+
+form table tr td{
+    border:none;
+}
+
+table tr td {
+    padding: 5px;
+    border: 1px solid #eee;
+    width: 100px;
+    word-wrap: break-word;
+}
+
+.inner_table {
+    height: 30px;
+    overflow-y: auto;
+}
+
+#views {
+    height: 400px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}

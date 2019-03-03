@@ -10,7 +10,11 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var assert = require('assert');
-// var PythonShell = require('python-shell');
+
+let {PythonShell} = require("python-shell");
+
+let search_results1 = [];
+let search_results2 = [];
 
 var ejs = require('ejs'); // important view engine 
 
@@ -40,36 +44,56 @@ app.get('/',function(req,res,next){
   res.render('index');
 });
 
-app.get('/Log-Analyser', function(req,res,next){
-	res.render('Log');
+app.get('/llogs', function(req,res,next){
+    res.render('llogs');
 });
 
-app.get('/name', callName); 
+app.get('/lsearch', function(req,res,next){
+    res.render('lsearch', {search_results1 : []});
+});
 
-function callName(req, res) { 
-    
-    // Use child_process.spawn method from 
-    // child_process module and assign it 
-    // to variable spawn 
-    var spawn = require("child_process").spawn; 
-    
-    // Parameters passed in spawn - 
-    // 1. type_of_script 
-    // 2. list containing Path of the script 
-    // and arguments for the script 
-    
-    // E.g : http://localhost:3000/name?firstname=Mike&lastname=Will 
-    // so, first name = Mike and last name = Will 
-    var process = spawn('python',["public/python/logsearch.py", 
-                            req.query.firstname, 
-                            req.query.lastname] ); 
+app.get('/tstamp', function(req,res,next){
+    res.render('tstamps',{search_results2 : []});
+});
 
-    // Takes stdout data from script which executed 
-    // with arguments and send this data to res object 
-    process.stdout.on('data', function(data) { 
-        res.render('index');
-        console.log(data.toString());
-    } ) 
-} 
+app.get('/Log-Analyser', function(req,res,next){
+    res.render('Log');
+});
 
-// save code as start.js 
+// Search Queries
+
+app.post('/lsearch', function(req,res,next){
+    // Query
+    var item = req.body.label;
+
+    // Function to call the Logs for the relateable search
+    //...........
+
+    // rendering the page with the data crunched in a list format like ["gshgjs","hskgdjs"]....list ka naam search_results
+    search_results1 = ['2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data']
+    res.render('lsearch', {search_results1 : search_results1});
+});
+
+app.post('/tstamp', function(req,res,next){
+    // Query
+    var item = req.body.label;
+
+    // Function to call the Logs for the relateable search
+    //...........
+
+    // rendering the page with the data crunched in a list format like ["gshgjs","hskgdjs"]....list ka naam search_results
+    search_results2 = ['2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data',
+    '2019-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data','2020-03-03 00:56:18.539346 INFO http_handler.py:391 Gathering node data']
+    res.render('tstamps', {search_results2 : search_results2});
+});

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./../style/new.css">
+<link rel="stylesheet" type="text/css" href="../style/main.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/tstamp">Time-Stamp</a>
+  <a href="/lsearch" class="active">Log-Search</a>
+  <a href="/llogs">Live-Logs</a>
+</div>
+
+<div class="topnav" id="myTopnav">
+  <a href="/">
+    <img src="./../images/logo.jpg" style="width: 35px;margin-left: 10px;">
+  </a>
+  <div id="imp">
+  <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#video" style="background-color: #82E0AA;">
+    <i class="fa fa-youtube-play" aria-hidden="true" style="color: white;margin-top: 8px;margin-right: 10px;font-size: 25px;"></i>
+  </button>
+  </div>
+</div>
+
+<div id="main">
+  <span style="font-size:20px;cursor:pointer;margin-left: 19px;" onclick="openNav()">&#9776;</span>
+</div>
+
+<footer id="footer">
+   <div class="footer-bottom text-center">
+    Copyright &copy; 2019 Log-Analyser
+  </div>
+</footer>
+
+<style>
+  #footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+  }
+</style>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "#D6EAF8";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "#5DADE2";
+}
+</script>
+     
+</body>
+</html> 
+
+<!-- modal for video -->
+
+<style>
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 90%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+</style>
+
+<div id="video" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body" style="background:#5DADE2">
+        <center>
+          <iframe width="600" height="330" src="https://www.youtube.com/embed/lR_NoIh1RB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </center>
+      </div>
+    </div>
