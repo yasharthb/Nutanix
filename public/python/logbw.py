@@ -9,7 +9,7 @@ reg2='%Y-%m-%d %H:%M:%S'
 start_time = datetime.strptime(keep_phrases[0], '%Y-%m-%d %H:%M:%S.%f')
 end_time = datetime.strptime(keep_phrases[1], '%Y-%m-%d %H:%M:%S.%f')
 
-for subdir, dirs, files in os.walk("/home/yasharth/Download_Temp/log_simulator/"):
+for subdir, dirs, files in os.walk("../data/log_simulator/"):
     for file in files:
         #print os.path.join(subdir, file)
         filepath = subdir + os.sep + file

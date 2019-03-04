@@ -19,7 +19,7 @@ def logger(infile) :
 print (cdbg)
 print(cerr)
 print(cinfo)
-for subdir, dirs, files in os.walk("/home/yasharth/Download_Temp/log_simulator/"):
+for subdir, dirs, files in os.walk("../data/log_simulator/"):
     for file in files:
         #print os.path.join(subdir, file)
         filepath = subdir + os.sep + file
