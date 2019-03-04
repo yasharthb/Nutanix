@@ -4,7 +4,7 @@ keep_phrases = raw_input("Enter string:")
 keep_phrases = keep_phrases.split(" ")
 # keep_phrases = ["DBG",
 #               "ERROR"]
-for subdir, dirs, files in os.walk("/home/yasharth/Download_Temp/log_simulator/"):
+for subdir, dirs, files in os.walk("./public/data/log_simulator/"):
     for file in files:
         #print os.path.join(subdir, file)
         filepath = subdir + os.sep + file

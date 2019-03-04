@@ -32,7 +32,7 @@ def logger(infile) :
             if check :
                 print line[:-1]
                 continue
-for subdir, dirs, files in os.walk("/home/yasharth/Download/_Temp/log_simulator/"):
+for subdir, dirs, files in os.walk("./public/data/log_simulator/"):
     for file in files:
         #print os.path.join(subdir, file)
         filepath = subdir + os.sep + file
