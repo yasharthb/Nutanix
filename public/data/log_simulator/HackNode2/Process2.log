@@ -139,3 +139,54 @@ InvalidArgumentError: Provided too many arguments
 2019-03-04 10:02:01.608196 INFO task_generator.py:285 Node destroyed
 2019-03-04 10:02:16.626706 INFO alert_manager.py:365 Node created
 2019-03-04 10:02:21.632958 INFO scheduler.py:304 Combining logs from all nodes into single log file
+2019-03-04 10:02:28.641534 DBG ssh_tunnel.py:81 Creating task
+2019-03-04 10:02:50.667959 ERROR gflags_handler.py:180 Node created
+2019-03-04 10:02:51.669172 INFO log_collector.py:72 Gathering logs from all nodes
+Traceback (most recent call last):
+  File "./random_traceback.py", line 108, in get_random_error_string
+  File "./random_traceback.py", line 81, in return_output
+BasicAuthRequiredError: Username not provided
+2019-03-04 10:03:00.679011 ERROR db_read.py:265 Gathering node data
+2019-03-04 10:03:07.686938 DBG wsgi_handler.py:150 Combining logs from all nodes into single log file
+2019-03-04 10:03:08.688202 INFO db_read.py:71 Node created
+2019-03-04 10:03:10.690715 ERROR db_read.py:316 Creating task
+2019-03-04 10:03:17.698682 DBG db_write.py:23 Node destroyed
+2019-03-04 10:03:20.701537 ERROR protobuf_parser.py:61 Gathering logs from all nodes
+2019-03-04 10:03:26.709073 ERROR gflags_handler.py:321 Generated binary file
+Traceback (most recent call last):
+  File "./random_traceback.py", line 108, in get_random_error_string
+  File "./random_traceback.py", line 75, in return_output
+  File "./random_traceback.py", line 70, in extract_metadata
+BadRequestError: Malformed request
+2019-03-04 10:03:40.728663 DBG wsgi_handler.py:194 Generated binary file
+2019-03-04 10:03:42.731207 ERROR log_collector.py:222 Gathering node data
+2019-03-04 10:03:43.732423 DBG wsgi_handler.py:19 Gathering logs from all nodes
+2019-03-04 10:03:44.733973 ERROR audit_logger.py:54 Node destroyed
+2019-03-04 10:03:47.738577 DBG task_generator.py:364 Node created
+2019-03-04 10:03:49.741474 DBG db_write.py:323 Node created
+2019-03-04 10:03:51.744158 DBG audit_logger.py:396 Creating task
+2019-03-04 10:03:56.751248 INFO scheduler.py:388 Fanning out RPC
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 92, in get_attributes
+BasicAuthRequiredError: Password not provided
+2019-03-04 10:04:05.764216 ERROR publisher.py:138 Fanning out RPC
+2019-03-04 10:04:13.775955 INFO protobuf_parser.py:203 Combining logs from all nodes into single log file
+2019-03-04 10:04:21.787852 DBG alert_manager.py:160 Fanning out RPC
+2019-03-04 10:04:33.803661 INFO alert_manager.py:396 Fanning out RPC
+2019-03-04 10:04:40.812316 ERROR wsgi_handler.py:84 Generated binary file
+2019-03-04 10:04:43.816142 INFO wsgi_handler.py:379 Combining logs from all nodes into single log file
+2019-03-04 10:04:45.818676 DBG db_read.py:165 Node created
+2019-03-04 10:04:46.819851 INFO http_handler.py:107 Node created
+2019-03-04 10:04:52.827163 ERROR db_write.py:116 Fanning out RPC
+2019-03-04 10:04:57.833559 INFO wsgi_handler.py:332 Node destroyed
+2019-03-04 10:05:02.840037 ERROR audit_logger.py:111 Node destroyed
+2019-03-04 10:05:03.841293 ERROR http_handler.py:2 Gathering logs from all nodes
+2019-03-04 10:05:06.845012 DBG db_read.py:257 Gathering node data
+2019-03-04 10:05:08.847583 DBG alert_manager.py:23 Node created
+2019-03-04 10:05:19.861838 DBG publisher.py:72 Node destroyed
+2019-03-04 10:05:20.863480 ERROR task_generator.py:139 Node created
+2019-03-04 10:05:26.872218 INFO audit_logger.py:112 Generated binary file
+2019-03-04 10:05:29.876420 ERROR publisher.py:225 Fanning out RPC
+2019-03-04 10:05:31.879156 INFO http_handler.py:383 Combining logs from all nodes into single log file
+2019-03-04 10:05:32.880468 DBG db_write.py:185 Node destroyed

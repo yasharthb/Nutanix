@@ -96,3 +96,49 @@ ConflictError: Conflicting data types
 2019-03-04 10:02:08.617105 INFO wsgi_handler.py:213 Gathering node data
 2019-03-04 10:02:09.618362 INFO fanout.py:278 Node created
 2019-03-04 10:02:19.630439 DBG http_handler.py:195 Combining logs from all nodes into single log file
+2019-03-04 10:02:26.639005 ERROR ssh_tunnel.py:362 Gathering node data
+2019-03-04 10:02:30.644212 INFO fanout.py:126 Generated binary file
+2019-03-04 10:02:32.646765 INFO alert_manager.py:180 Combining logs from all nodes into single log file
+2019-03-04 10:02:34.649321 DBG log_collector.py:10 Combining logs from all nodes into single log file
+2019-03-04 10:02:36.651840 ERROR http_handler.py:221 Gathering node data
+2019-03-04 10:02:38.654364 ERROR task_generator.py:9 Creating task
+2019-03-04 10:02:44.660257 INFO fanout.py:209 Node created
+2019-03-04 10:02:47.664247 ERROR scheduler.py:321 Gathering logs from all nodes
+2019-03-04 10:02:48.665495 ERROR db_write.py:356 Gathering logs from all nodes
+2019-03-04 10:02:54.672261 DBG protobuf_parser.py:295 Gathering logs from all nodes
+2019-03-04 10:03:01.680182 DBG wsgi_handler.py:53 Node destroyed
+2019-03-04 10:03:09.689456 DBG db_write.py:160 Generated binary file
+2019-03-04 10:03:16.697542 DBG db_read.py:9 Node destroyed
+2019-03-04 10:03:24.706494 DBG audit_logger.py:62 Generated binary file
+2019-03-04 10:03:36.723605 INFO ssh_tunnel.py:100 Fanning out RPC
+2019-03-04 10:03:38.726132 INFO task_generator.py:367 Gathering node data
+2019-03-04 10:03:39.727395 INFO protobuf_parser.py:131 Gathering node data
+2019-03-04 10:03:45.735266 DBG wsgi_handler.py:89 Node destroyed
+2019-03-04 10:03:50.743007 DBG scheduler.py:250 Generated binary file
+2019-03-04 10:03:54.748510 ERROR task_generator.py:164 Gathering node data
+2019-03-04 10:04:00.757405 DBG gflags_handler.py:304 Node created
+2019-03-04 10:04:01.758849 DBG ssh_tunnel.py:120 Node created
+Traceback (most recent call last):
+  File "./random_traceback.py", line 108, in get_random_error_string
+  File "./random_traceback.py", line 81, in return_output
+BadRequestError: Malformed request
+2019-03-04 10:04:22.789530 ERROR task_generator.py:287 Node created
+2019-03-04 10:04:23.790932 ERROR db_read.py:293 Creating task
+2019-03-04 10:04:25.793682 INFO db_read.py:356 Creating task
+2019-03-04 10:04:28.797362 DBG db_read.py:261 Fanning out RPC
+2019-03-04 10:04:31.801142 ERROR rpc_client.py:241 Node destroyed
+2019-03-04 10:04:32.802408 ERROR gflags_handler.py:306 Creating task
+2019-03-04 10:04:36.807449 ERROR fanout.py:182 Gathering logs from all nodes
+2019-03-04 10:04:50.824773 ERROR db_write.py:74 Generated binary file
+2019-03-04 10:04:54.829704 ERROR db_write.py:391 Generated binary file
+2019-03-04 10:04:56.832234 DBG fanout.py:180 Creating task
+2019-03-04 10:04:58.834841 INFO task_generator.py:234 Creating task
+2019-03-04 10:04:59.836129 DBG log_collector.py:254 Node destroyed
+2019-03-04 10:05:14.855145 DBG task_generator.py:292 Combining logs from all nodes into single log file
+2019-03-04 10:05:22.866396 ERROR alert_manager.py:392 Node destroyed
+2019-03-04 10:05:28.875139 INFO publisher.py:376 Combining logs from all nodes into single log file
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 70, in extract_metadata
+MissingAttributeError: Extra attribute needed
+2019-03-04 10:05:35.885212 ERROR publisher.py:237 Combining logs from all nodes into single log file

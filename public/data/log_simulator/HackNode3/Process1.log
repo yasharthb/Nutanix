@@ -97,3 +97,67 @@ MissingAttributeError: Extra attribute needed
 2019-03-04 10:02:16.613695 INFO alert_manager.py:29 Gathering logs from all nodes
 2019-03-04 10:02:17.614972 INFO publisher.py:111 Node destroyed
 2019-03-04 10:02:19.617528 INFO audit_logger.py:21 Node destroyed
+2019-03-04 10:02:25.625472 INFO log_collector.py:13 Combining logs from all nodes into single log file
+2019-03-04 10:02:27.628454 ERROR scheduler.py:190 Generated binary file
+2019-03-04 10:02:30.632884 DBG task_generator.py:241 Creating task
+Traceback (most recent call last):
+  File "./random_traceback.py", line 98, in get_random_error_string
+  File "./random_traceback.py", line 55, in get_data
+  File "./random_traceback.py", line 81, in return_output
+BadRequestError: Request buffer too large
+2019-03-04 10:02:38.643819 INFO scheduler.py:134 Node destroyed
+2019-03-04 10:02:39.645412 ERROR log_collector.py:64 Gathering logs from all nodes
+2019-03-04 10:02:41.648250 INFO log_collector.py:78 Generated binary file
+2019-03-04 10:02:53.666490 ERROR rpc_client.py:383 Combining logs from all nodes into single log file
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 70, in extract_metadata
+InvalidArgumentError: Arguments not supported
+2019-03-04 10:02:58.672943 INFO log_collector.py:176 Gathering node data
+2019-03-04 10:03:14.694297 ERROR alert_manager.py:142 Fanning out RPC
+2019-03-04 10:03:15.695797 ERROR rpc_client.py:54 Gathering node data
+2019-03-04 10:03:19.700784 INFO audit_logger.py:245 Combining logs from all nodes into single log file
+2019-03-04 10:03:20.702043 INFO ssh_tunnel.py:378 Creating task
+2019-03-04 10:03:21.703295 INFO rpc_client.py:380 Gathering logs from all nodes
+Traceback (most recent call last):
+  File "./random_traceback.py", line 98, in get_random_error_string
+  File "./random_traceback.py", line 59, in get_data
+ConflictError: Mismatched argumnets
+2019-03-04 10:03:30.713689 DBG alert_manager.py:166 Generated binary file
+2019-03-04 10:03:35.720169 INFO log_collector.py:276 Creating task
+2019-03-04 10:03:46.734469 INFO task_generator.py:27 Gathering node data
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 70, in extract_metadata
+BadRequestError: Request buffer too large
+2019-03-04 10:04:15.770933 ERROR db_write.py:373 Node destroyed
+2019-03-04 10:04:16.772249 INFO wsgi_handler.py:270 Combining logs from all nodes into single log file
+Traceback (most recent call last):
+  File "./random_traceback.py", line 108, in get_random_error_string
+  File "./random_traceback.py", line 75, in return_output
+  File "./random_traceback.py", line 70, in extract_metadata
+BadRequestError: Request buffer too small
+2019-03-04 10:04:26.784234 ERROR db_write.py:227 Node created
+2019-03-04 10:04:39.801239 ERROR scheduler.py:236 Node destroyed
+2019-03-04 10:04:47.809470 INFO db_read.py:252 Node destroyed
+2019-03-04 10:04:48.810807 DBG audit_logger.py:47 Gathering node data
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 64, in extract_metadata
+  File "./random_traceback.py", line 88, in get_attributes
+  File "./random_traceback.py", line 92, in get_attributes
+ConflictError: Mismatched argumnets
+Traceback (most recent call last):
+  File "./random_traceback.py", line 108, in get_random_error_string
+  File "./random_traceback.py", line 81, in return_output
+BasicAuthRequiredError: Invalid authentication
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 70, in extract_metadata
+InvalidArgumentError: Arguments not supported
+2019-03-04 10:05:05.832275 ERROR audit_logger.py:323 Node destroyed
+2019-03-04 10:05:07.834800 INFO wsgi_handler.py:275 Combining logs from all nodes into single log file
+2019-03-04 10:05:19.850578 ERROR rpc_client.py:325 Creating task
+2019-03-04 10:05:21.853204 INFO alert_manager.py:251 Node created
+2019-03-04 10:05:25.858407 INFO audit_logger.py:66 Generated binary file
+2019-03-04 10:05:34.870020 ERROR publisher.py:46 Combining logs from all nodes into single log file

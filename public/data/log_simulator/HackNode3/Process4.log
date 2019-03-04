@@ -109,3 +109,46 @@ Traceback (most recent call last):
   File "./random_traceback.py", line 98, in get_random_error_string
   File "./random_traceback.py", line 59, in get_data
 BadRequestError: Request buffer too small
+2019-03-04 10:02:22.621504 INFO fanout.py:196 Node created
+2019-03-04 10:02:29.631617 ERROR ssh_tunnel.py:139 Node destroyed
+2019-03-04 10:02:32.635407 INFO scheduler.py:274 Creating task
+2019-03-04 10:02:40.646759 ERROR ssh_tunnel.py:2 Gathering logs from all nodes
+2019-03-04 10:02:42.650124 ERROR alert_manager.py:225 Fanning out RPC
+2019-03-04 10:02:43.651687 INFO db_read.py:79 Creating task
+2019-03-04 10:02:54.667767 ERROR rpc_client.py:265 Creating task
+2019-03-04 10:02:55.669038 INFO audit_logger.py:304 Combining logs from all nodes into single log file
+2019-03-04 10:02:57.671679 ERROR scheduler.py:61 Gathering node data
+2019-03-04 10:03:02.678480 ERROR task_generator.py:359 Gathering node data
+2019-03-04 10:03:05.682389 DBG ssh_tunnel.py:56 Gathering logs from all nodes
+2019-03-04 10:03:27.710680 INFO db_read.py:75 Gathering node data
+2019-03-04 10:03:29.712328 DBG publisher.py:249 Creating task
+Traceback (most recent call last):
+  File "./random_traceback.py", line 98, in get_random_error_string
+  File "./random_traceback.py", line 59, in get_data
+BadRequestError: Special Characters not allowed
+2019-03-04 10:03:34.718913 DBG fanout.py:42 Creating task
+2019-03-04 10:03:36.721453 INFO alert_manager.py:240 Node destroyed
+2019-03-04 10:03:37.722763 INFO ssh_tunnel.py:255 Combining logs from all nodes into single log file
+2019-03-04 10:03:40.726654 ERROR scheduler.py:211 Creating task
+2019-03-04 10:03:50.739105 ERROR audit_logger.py:319 Gathering logs from all nodes
+2019-03-04 10:03:53.743243 INFO log_collector.py:103 Creating task
+2019-03-04 10:03:55.745646 DBG ssh_tunnel.py:144 Generated binary file
+2019-03-04 10:04:02.754893 INFO publisher.py:396 Fanning out RPC
+2019-03-04 10:04:07.761171 INFO task_generator.py:82 Combining logs from all nodes into single log file
+2019-03-04 10:04:19.776140 DBG fanout.py:137 Gathering logs from all nodes
+2019-03-04 10:04:21.778657 INFO wsgi_handler.py:218 Node created
+2019-03-04 10:04:23.780586 DBG scheduler.py:283 Combining logs from all nodes into single log file
+2019-03-04 10:04:27.785580 INFO alert_manager.py:289 Node created
+2019-03-04 10:04:28.786792 INFO scheduler.py:291 Gathering node data
+2019-03-04 10:04:36.797295 INFO publisher.py:241 Creating task
+2019-03-04 10:04:58.823040 ERROR publisher.py:298 Generated binary file
+2019-03-04 10:04:59.824309 DBG wsgi_handler.py:33 Creating task
+2019-03-04 10:05:01.826996 DBG http_handler.py:306 Gathering logs from all nodes
+2019-03-04 10:05:03.829632 DBG alert_manager.py:115 Gathering node data
+2019-03-04 10:05:04.830948 ERROR task_generator.py:301 Node destroyed
+2019-03-04 10:05:15.845421 DBG ssh_tunnel.py:152 Combining logs from all nodes into single log file
+2019-03-04 10:05:16.846739 INFO audit_logger.py:197 Gathering node data
+2019-03-04 10:05:22.854520 DBG ssh_tunnel.py:101 Gathering logs from all nodes
+2019-03-04 10:05:30.864861 DBG task_generator.py:309 Node created
+2019-03-04 10:05:31.866066 DBG ssh_tunnel.py:214 Generated binary file
+2019-03-04 10:05:32.867387 ERROR ssh_tunnel.py:51 Gathering logs from all nodes

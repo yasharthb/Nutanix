@@ -134,3 +134,80 @@ ConflictError: Mismatched argumnets
 2019-03-04 10:02:10.606705 ERROR wsgi_handler.py:95 Node created
 2019-03-04 10:02:15.613037 INFO ssh_tunnel.py:174 Combining logs from all nodes into single log file
 2019-03-04 10:02:16.614294 ERROR protobuf_parser.py:296 Combining logs from all nodes into single log file
+2019-03-04 10:02:22.621859 ERROR task_generator.py:21 Creating task
+2019-03-04 10:02:31.633602 DBG ssh_tunnel.py:388 Node created
+2019-03-04 10:02:45.654723 DBG http_handler.py:186 Gathering logs from all nodes
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 92, in get_attributes
+BasicAuthRequiredError: Authentication not provided
+Traceback (most recent call last):
+  File "./random_traceback.py", line 108, in get_random_error_string
+  File "./random_traceback.py", line 81, in return_output
+InvalidArgumentError: Provided too many arguments
+2019-03-04 10:02:57.670964 ERROR db_read.py:398 Creating task
+2019-03-04 10:03:15.694821 DBG scheduler.py:296 Node created
+2019-03-04 10:03:19.699650 DBG gflags_handler.py:324 Generated binary file
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 92, in get_attributes
+BadRequestError: Request buffer too large
+2019-03-04 10:03:35.722122 DBG protobuf_parser.py:344 Creating task
+2019-03-04 10:03:39.727197 ERROR task_generator.py:15 Fanning out RPC
+2019-03-04 10:03:40.728464 DBG http_handler.py:400 Gathering logs from all nodes
+2019-03-04 10:03:41.729731 DBG publisher.py:3 Creating task
+2019-03-04 10:03:47.738390 ERROR scheduler.py:92 Generated binary file
+2019-03-04 10:03:48.739844 DBG wsgi_handler.py:121 Gathering logs from all nodes
+2019-03-04 10:03:52.745810 ERROR wsgi_handler.py:277 Gathering logs from all nodes
+2019-03-04 10:03:55.749781 INFO publisher.py:388 Fanning out RPC
+Traceback (most recent call last):
+  File "./random_traceback.py", line 98, in get_random_error_string
+  File "./random_traceback.py", line 59, in get_data
+BadRequestError: Request buffer too small
+2019-03-04 10:04:01.758691 ERROR http_handler.py:75 Fanning out RPC
+2019-03-04 10:04:03.761619 DBG wsgi_handler.py:15 Fanning out RPC
+2019-03-04 10:04:05.764409 DBG db_write.py:58 Gathering node data
+Traceback (most recent call last):
+  File "./random_traceback.py", line 98, in get_random_error_string
+  File "./random_traceback.py", line 55, in get_data
+  File "./random_traceback.py", line 75, in return_output
+  File "./random_traceback.py", line 66, in extract_metadata
+  File "./random_traceback.py", line 81, in return_output
+ConflictError: Conflicting data types
+2019-03-04 10:04:12.774525 INFO db_read.py:108 Fanning out RPC
+2019-03-04 10:04:13.776099 ERROR db_read.py:17 Node created
+2019-03-04 10:04:16.780360 ERROR rpc_client.py:99 Creating task
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 88, in get_attributes
+  File "./random_traceback.py", line 92, in get_attributes
+BasicAuthRequiredError: Username not provided
+2019-03-04 10:04:26.795852 INFO audit_logger.py:376 Creating task
+2019-03-04 10:04:28.798339 ERROR audit_logger.py:9 Gathering node data
+2019-03-04 10:04:29.799597 ERROR log_collector.py:330 Fanning out RPC
+2019-03-04 10:04:35.807364 DBG fanout.py:73 Node destroyed
+2019-03-04 10:04:40.813470 DBG wsgi_handler.py:137 Gathering logs from all nodes
+2019-03-04 10:04:44.818594 DBG db_write.py:71 Generated binary file
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 86, in get_attributes
+  File "./random_traceback.py", line 55, in get_data
+  File "./random_traceback.py", line 77, in return_output
+  File "./random_traceback.py", line 53, in get_data
+  File "./random_traceback.py", line 66, in extract_metadata
+  File "./random_traceback.py", line 75, in return_output
+  File "./random_traceback.py", line 64, in extract_metadata
+  File "./random_traceback.py", line 88, in get_attributes
+  File "./random_traceback.py", line 88, in get_attributes
+  File "./random_traceback.py", line 92, in get_attributes
+MissingAttributeError: Attribute not provided
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 92, in get_attributes
+BadRequestError: Request buffer too large
+2019-03-04 10:04:58.836240 INFO scheduler.py:308 Combining logs from all nodes into single log file
+2019-03-04 10:05:05.845178 ERROR publisher.py:300 Node destroyed
+2019-03-04 10:05:07.847009 DBG http_handler.py:111 Node created
+2019-03-04 10:05:10.850808 INFO scheduler.py:203 Node destroyed
+2019-03-04 10:05:20.863300 INFO task_generator.py:121 Node created
+2019-03-04 10:05:35.885031 ERROR protobuf_parser.py:2 Generated binary file

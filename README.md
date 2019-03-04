@@ -25,6 +25,7 @@ cd Nutanix
 cd public/data
 python log_simulator.zip -n N -p P --new --sleep_time 1
 ```
+Note: It is advised to use the ```--new``` and ```--sleep_time``` options.
 ### Start the App
 
 Type ``` npm init ``` and Press RETURN through all the prompts

@@ -121,3 +121,59 @@ BasicAuthRequiredError: Invalid authentication
 2019-03-04 10:02:17.615463 ERROR http_handler.py:338 Gathering node data
 2019-03-04 10:02:18.616606 DBG task_generator.py:210 Node created
 2019-03-04 10:02:19.617865 DBG http_handler.py:103 Node destroyed
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 92, in get_attributes
+BasicAuthRequiredError: Username not provided
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 70, in extract_metadata
+InvalidArgumentError: Arguments not supported
+2019-03-04 10:02:36.640825 ERROR publisher.py:152 Fanning out RPC
+2019-03-04 10:02:49.661011 DBG log_collector.py:253 Combining logs from all nodes into single log file
+2019-03-04 10:02:52.664401 DBG audit_logger.py:194 Gathering node data
+2019-03-04 10:02:53.665675 DBG db_read.py:127 Gathering node data
+2019-03-04 10:02:55.668375 INFO publisher.py:334 Node created
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 88, in get_attributes
+  File "./random_traceback.py", line 92, in get_attributes
+ConflictError: Mismatched argumnets
+2019-03-04 10:03:09.686753 ERROR protobuf_parser.py:186 Generated binary file
+2019-03-04 10:03:12.690716 DBG log_collector.py:303 Gathering node data
+Traceback (most recent call last):
+  File "./random_traceback.py", line 98, in get_random_error_string
+  File "./random_traceback.py", line 59, in get_data
+InvalidArgumentError: Unable to parse arguments
+2019-03-04 10:03:20.700923 INFO task_generator.py:264 Node destroyed
+2019-03-04 10:03:23.704741 INFO http_handler.py:64 Creating task
+2019-03-04 10:03:30.714720 ERROR fanout.py:51 Creating task
+Traceback (most recent call last):
+  File "./random_traceback.py", line 113, in get_random_error_string
+  File "./random_traceback.py", line 92, in get_attributes
+BadRequestError: Malformed request
+2019-03-04 10:03:33.719103 DBG scheduler.py:316 Fanning out RPC
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 66, in extract_metadata
+  File "./random_traceback.py", line 81, in return_output
+BasicAuthRequiredError: Username not provided
+2019-03-04 10:03:54.748558 DBG http_handler.py:298 Fanning out RPC
+2019-03-04 10:03:58.754349 ERROR publisher.py:194 Combining logs from all nodes into single log file
+2019-03-04 10:03:59.755804 DBG gflags_handler.py:57 Gathering logs from all nodes
+2019-03-04 10:04:19.784824 INFO alert_manager.py:174 Creating task
+2019-03-04 10:04:23.790778 INFO db_write.py:315 Gathering node data
+2019-03-04 10:04:25.794705 DBG protobuf_parser.py:331 Creating task
+2019-03-04 10:04:32.803584 INFO publisher.py:185 Gathering logs from all nodes
+2019-03-04 10:04:50.825874 INFO scheduler.py:299 Creating task
+2019-03-04 10:04:57.834972 INFO rpc_client.py:42 Node destroyed
+2019-03-04 10:05:00.838774 ERROR ssh_tunnel.py:376 Node destroyed
+2019-03-04 10:05:04.843905 ERROR protobuf_parser.py:52 Node created
+2019-03-04 10:05:13.854749 INFO scheduler.py:68 Combining logs from all nodes into single log file
+2019-03-04 10:05:15.857321 DBG log_collector.py:207 Gathering node data
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 70, in extract_metadata
+ConflictError: Data structure not supported
+2019-03-04 10:05:27.873676 ERROR gflags_handler.py:294 Fanning out RPC
+2019-03-04 10:05:36.886474 INFO audit_logger.py:166 Generated binary file

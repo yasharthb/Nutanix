@@ -127,3 +127,33 @@ BadRequestError: Special Characters not allowed
 2019-03-04 10:02:03.595935 ERROR db_write.py:189 Gathering logs from all nodes
 2019-03-04 10:02:06.600715 ERROR audit_logger.py:67 Gathering node data
 2019-03-04 10:02:20.619125 ERROR task_generator.py:354 Fanning out RPC
+2019-03-04 10:02:24.624386 INFO alert_manager.py:83 Combining logs from all nodes into single log file
+2019-03-04 10:02:35.639323 ERROR task_generator.py:333 Gathering logs from all nodes
+2019-03-04 10:02:37.642155 INFO publisher.py:194 Creating task
+2019-03-04 10:02:40.646982 DBG rpc_client.py:252 Combining logs from all nodes into single log file
+Traceback (most recent call last):
+  File "./random_traceback.py", line 103, in get_random_error_string
+  File "./random_traceback.py", line 70, in extract_metadata
+ConflictError: Data structure not supported
+2019-03-04 10:03:03.678862 DBG db_read.py:65 Gathering logs from all nodes
+2019-03-04 10:03:05.681368 ERROR scheduler.py:20 Gathering logs from all nodes
+2019-03-04 10:03:06.682673 DBG rpc_client.py:48 Combining logs from all nodes into single log file
+2019-03-04 10:03:14.693484 INFO publisher.py:355 Generated binary file
+2019-03-04 10:03:17.696885 INFO protobuf_parser.py:77 Node destroyed
+2019-03-04 10:03:28.711223 INFO rpc_client.py:375 Generated binary file
+2019-03-04 10:03:29.712421 INFO publisher.py:327 Generated binary file
+2019-03-04 10:03:31.716029 ERROR protobuf_parser.py:361 Fanning out RPC
+2019-03-04 10:03:36.723388 INFO gflags_handler.py:193 Gathering node data
+2019-03-04 10:03:45.735424 INFO ssh_tunnel.py:213 Node destroyed
+2019-03-04 10:04:17.781920 INFO gflags_handler.py:363 Gathering logs from all nodes
+2019-03-04 10:04:27.797112 ERROR scheduler.py:280 Fanning out RPC
+2019-03-04 10:04:42.816120 ERROR gflags_handler.py:5 Gathering logs from all nodes
+2019-03-04 10:04:43.817259 DBG scheduler.py:39 Fanning out RPC
+2019-03-04 10:04:55.832405 ERROR publisher.py:352 Gathering node data
+2019-03-04 10:04:59.837508 ERROR db_read.py:231 Gathering logs from all nodes
+2019-03-04 10:05:02.841352 INFO fanout.py:262 Node created
+2019-03-04 10:05:21.864747 ERROR fanout.py:257 Node destroyed
+2019-03-04 10:05:23.867654 DBG protobuf_parser.py:367 Generated binary file
+2019-03-04 10:05:25.870914 DBG wsgi_handler.py:228 Generated binary file
+2019-03-04 10:05:28.875000 INFO task_generator.py:67 Node destroyed
+2019-03-04 10:05:34.883587 ERROR http_handler.py:311 Gathering logs from all nodes
