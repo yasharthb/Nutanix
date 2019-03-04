@@ -67,10 +67,9 @@ app.get('/Log-Analyser', function(req,res,next){
 app.post('/lsearch', function(req,res,next){
     // Query
     var item = req.body.label;
-    var arg1 = item.split(";");
     var options = {
     mode: 'text',
-    args: arg1
+    args: item
     };
     PythonShell.run("public/python/logsch.py", options, function(err,results) {
       if (err) throw err;

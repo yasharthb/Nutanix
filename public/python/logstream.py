@@ -5,7 +5,7 @@ import time
 filedic=[]
 # keep_phrases = sys.argv[1]
 # keep_phrases = keep_phrases.split(";")
-
+open('./public/data/myfile.txt', 'w').close()
 def logger(infile) :
     f=open(infile)
     while 1:

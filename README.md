@@ -1,6 +1,7 @@
 # Log Analyzer
 ==================
-##Technologies used:
+
+## Technologies used:
 HTML/CSS
 Node.js
 JQuery
@@ -43,4 +44,4 @@ Any filtered logs are Downloadable as pdf files for further review using the dow
 If the log files are being dumped properly.
 Press Start button to view the tailing central log.
 
-### Note : If a service fails to work.Please restart the server.
+### Note : If a service fails to work.Please restart the server
